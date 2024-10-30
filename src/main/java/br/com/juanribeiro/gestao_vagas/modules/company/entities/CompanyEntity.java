@@ -22,6 +22,7 @@ public class CompanyEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
+
   @NotBlank()
   @Pattern(regexp = "\\S+", message = "O campo [username] não deve conter espaços!")
   private String username;
@@ -31,8 +32,11 @@ public class CompanyEntity {
 
   @Length(min = 10, max = 100, message = "O campo [senha] deve estar entre 10 e 100 caracteres!")
   private String password;
+
   private String website;
+
   private String name;
+  
   private String description;
 
   @CreationTimestamp
