@@ -20,7 +20,7 @@ import br.com.juanribeiro.gestao_vagas.modules.candidate.dto.AuthCandidateReques
 import br.com.juanribeiro.gestao_vagas.modules.candidate.dto.AuthCandidateResponseDTO;
 
 @Service
-public class AuthUseCaseCandidate {
+public class AuthCandidateUseCase {
   
   @Value("${security.token.secret.candidate}")
   private String secretKey;
@@ -45,15 +45,18 @@ public class AuthUseCaseCandidate {
 
     Algorithm algorithm = Algorithm.HMAC256(secretKey);
     
+    var expiresIn = Instant.now().plus(Duration.ofHours(2));
+
     var token = JWT.create()
       .withIssuer("javagas")
       .withSubject(candidate.getId().toString())
       .withClaim("roles", Arrays.asList("candidate"))
-      .withExpiresAt(Instant.now().plus(Duration.ofHours(2)))
+      .withExpiresAt(expiresIn)
       .sign(algorithm);
 
     var authCandidateResponse = AuthCandidateResponseDTO.builder()
       .access_token(token)
+      .expires_in(expiresIn.toEpochMilli())
       .build();
 
     return authCandidateResponse;
