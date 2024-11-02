@@ -3,7 +3,6 @@ package br.com.juanribeiro.gestao_vagas.modules.candidate.controllers;
 import java.util.List;
 import java.util.UUID;
 
-import org.postgresql.shaded.com.ongres.stringprep.Profile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
