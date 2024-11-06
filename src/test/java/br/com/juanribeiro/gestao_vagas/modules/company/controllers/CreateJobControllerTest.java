@@ -1,7 +1,5 @@
 package br.com.juanribeiro.gestao_vagas.modules.company.controllers;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import java.util.UUID;
 
 import org.junit.Before;
@@ -20,7 +18,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import br.com.juanribeiro.gestao_vagas.exceptions.CompanyNotFoundException;
 import br.com.juanribeiro.gestao_vagas.modules.company.dto.CreateJobDTO;
 import br.com.juanribeiro.gestao_vagas.modules.company.entities.CompanyEntity;
 import br.com.juanribeiro.gestao_vagas.modules.company.repositories.CompanyRepository;

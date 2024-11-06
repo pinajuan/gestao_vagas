@@ -2,7 +2,6 @@ package br.com.juanribeiro.gestao_vagas.modules.candidate.useCases;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.DisplayName;
